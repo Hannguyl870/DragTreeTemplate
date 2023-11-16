@@ -13,6 +13,8 @@ namespace DragTree
 {
     public partial class Form1 : Form
     {
+        Stopwatch stopwatch = new Stopwatch();
+        int counter = 1;
         // TODO - create an int variable to track currentRow,
         // TODO - create a Stopwatch object called stopwatch 
 
@@ -33,13 +35,46 @@ namespace DragTree
         private void startButton_Click(object sender, EventArgs e)
         {
             // TODO - start the timer
+                lighttimer.Enabled = true;
+                stopwatch.Start();
+            timeLabel.Text = stopwatch.Elapsed.ToString();
 
+            counter++;
+
+
+            //if (counter % 4 == 0)
+            //{
+            //    if (row1col1.BackColor = Color.DimGray)
+            //    {
+            //        row1col1.BackColor = Color.Red;
+            //        row1col2.BackColor = Color.Red;
+            //    }
+            //   else if (row2col1.BackColor = Color.DimGray)
+            //    {
+            //        row2col1.BackColor = Color.Orange;
+            //        row2col2.BackColor = Color.Orange;
+            //    }
+            //    else if (row3col2.BackColor = Color.DimGray)
+            //    {
+            //        row3col1.BackColor = Color.Yellow;
+            //        row3col2.BackColor = Color.Yellow;
+            //    }
+            //    else
+            //    {
+            //        row4col1.BackColor = Color.Green;
+            //        row4col2.BackColor = Color.Green;
+            //    }
+
+            //}
         }
 
         private void goButton_Click(object sender, EventArgs e)
         {
             // TODO - stop the stopwatch
-
+            stopwatch.Stop();
+          lighttimer.Enabled = false;
+            
+            
             // TODO - check if the ellapsed time in milliseconds is > 0. 
             // If yes show the time.
             // If no show "FOUL START" 
